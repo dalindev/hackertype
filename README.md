@@ -2,6 +2,9 @@
 
 This is a forked repository of HackerType, enhanced with an experimental Auto-Type Bot for educational and entertainment purposes.
 
+## Demo Video:
+[![Auto-Type Bot Demo](https://img.youtube.com/vi/3vFojhtGv5Y/0.jpg)](https://youtube.com/shorts/3vFojhtGv5Y?feature=share)
+
 ### Original HackerType Description:
 Test your coding speed and accuracy by practicing with LeetCode solutions!
 
@@ -30,9 +33,6 @@ I've added an Auto-Type Bot to this project as a fun experiment and to explore t
 - `README.md`: This file
 - `AutoTypeBot.js`: Contains the Auto-Type Bot code (located at the root of the project)
 - Other files from the original HackerType project
-
-## Demo Video:
-[![Auto-Type Bot Demo](https://img.youtube.com/vi/3vFojhtGv5Y/0.jpg)](https://youtube.com/shorts/3vFojhtGv5Y?feature=share)
 
 ## Screenshots:
 
