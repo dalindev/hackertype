@@ -32,7 +32,7 @@ I've added an Auto-Type Bot to this project as a fun experiment and to explore t
 - Other files from the original HackerType project
 
 ## Demo Video:
-[Link to your demo video]
+[![Auto-Type Bot Demo](https://img.youtube.com/vi/3vFojhtGv5Y/0.jpg)](https://youtube.com/shorts/3vFojhtGv5Y?feature=share)
 
 ## Screenshots:
 
