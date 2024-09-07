@@ -1,10 +1,10 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import dailySolutions from "./codefiles/dailySolutions";
-import {addDoc, getDoc} from "firebase/firestore";
-import {db} from "./firebase";
-import {collection, increment, updateDoc, doc, getDocs} from "firebase/firestore";
-import {StarIcon} from "@chakra-ui/icons";
-import {discordWebhook} from "./utils/utils";
+import { addDoc, getDoc } from "firebase/firestore";
+import { db } from "./firebase";
+import { collection, increment, updateDoc, doc, getDocs } from "firebase/firestore";
+import { StarIcon } from "@chakra-ui/icons";
+import { discordWebhook } from "./utils/utils";
 import {
   Text,
   Box,
@@ -20,26 +20,26 @@ import {
 import LeaderboardModal from "./LeaderboardModal";
 import WpmLineChart from "./WpmLineChart";
 import Section from "./Section";
-import {RepeatIcon} from "@chakra-ui/icons";
+import { RepeatIcon } from "@chakra-ui/icons";
 
 function Timer({
-                 language,
-                 thisSolutionPR,
-                 user,
-                 leetcodeTitle,
-                 submitted,
-                 setSubmitted,
-                 correctWords,
-                 startCounting,
-                 pause,
-                 totalWords,
-                 last_daily,
-                 correctCharacterArray,
-                 wordLimit,
-                 Restart,
-                 showLiveWPM,
-                 config,
-               }) {
+  language,
+  thisSolutionPR,
+  user,
+  leetcodeTitle,
+  submitted,
+  setSubmitted,
+  correctWords,
+  startCounting,
+  pause,
+  totalWords,
+  last_daily,
+  correctCharacterArray,
+  wordLimit,
+  Restart,
+  showLiveWPM,
+  config,
+}) {
   const [timeElapsed, setTimeElapsed] = useState(0);
   const actualPR = thisSolutionPR;
   const [finalWPM, setFinalWPM] = useState(0);
@@ -153,7 +153,7 @@ function Timer({
             <Box>
               <Center>
                 <Stack direction="row">
-                  <StarIcon fontSize="24px" paddingTop="10px"/>
+                  <StarIcon fontSize="24px" paddingTop="10px" />
                   <Text fontWeight={600} color={config["logoColor"]}>
                     NEW PR!
                   </Text>
@@ -168,7 +168,7 @@ function Timer({
             </Box>
           )}
 
-          {finalWPM > 190 && (
+          {/* {finalWPM > 190 && (
             <Box>
               <Center>
                 <Stack direction="row">
@@ -179,11 +179,11 @@ function Timer({
                 </Stack>
               </Center>
             </Box>
-          )}
+          )} */}
 
           <Center>
-            <Box style={{width: 750}}>
-              <WpmLineChart givenData={wpmGraph}/>
+            <Box style={{ width: 750 }}>
+              <WpmLineChart givenData={wpmGraph} />
             </Box>
           </Center>
           <Center>
@@ -291,21 +291,21 @@ function Timer({
                 <Button
                   style={{}}
                   className={"standardButton"}
-                  _hover={{backgroundColor: "transparent"}}
+                  _hover={{ backgroundColor: "transparent" }}
                   color={config["mainText"]}
                   backgroundColor="transparent"
-                  _pressed={{backgroundColor: 'red'}}
-                  _active={{backgroundColor: 'red'}}
+                  _pressed={{ backgroundColor: 'red' }}
+                  _active={{ backgroundColor: 'red' }}
                   onClick={() => Restart(language, wordLimit, "retry")}>
                   Retry Test
                 </Button>
               </Box>
               <Box>
                 <Button
-                  _hover={{backgroundColor: "transparent"}}
+                  _hover={{ backgroundColor: "transparent" }}
                   color={config["mainText"]}
-                  _pressed={{backgroundColor: 'red'}}
-                  _active={{backgroundColor: 'red'}}
+                  _pressed={{ backgroundColor: 'red' }}
+                  _active={{ backgroundColor: 'red' }}
                   backgroundColor="transparent"
                   onClick={() => Restart(language, wordLimit)}>
                   <Text>New Test</Text>

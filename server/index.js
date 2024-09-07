@@ -14,8 +14,19 @@ app.get('/', function (req, res) {
 const why = 1;
 console.log("a")
 // read javascriptCode.json
-let codeArray = fs.readFileSync('javascriptCode.json');
-codeArray = JSON.parse(codeArray);
+let codeArray = [];
+try {
+  codeArray = fs.readFileSync('javascriptCode.json', 'utf8');
+  codeArray = JSON.parse(codeArray);
+} catch (error) {
+  if (error.code === 'ENOENT') {
+    console.log('javascriptCode.json not found. Creating a new file.');
+    fs.writeFileSync('javascriptCode.json', '[]');
+  } else {
+    console.error('Error reading javascriptCode.json:', error);
+    process.exit(1);
+  }
+}
 console.log(codeArray);
 
 (async () => {
@@ -33,9 +44,9 @@ console.log(codeArray);
     await page.goto(`https://baffinlee.com/leetcode-javascript/page/${i}.html`);
 
     const aTags = await page.evaluate(() => {
-        const aTags = Array.from(document.querySelectorAll('td a'));
-        return aTags.map(a => a.href);
-      }
+      const aTags = Array.from(document.querySelectorAll('td a'));
+      return aTags.map(a => a.href);
+    }
     );
 
     for (let j = 0; j < aTags.length; j++) {
